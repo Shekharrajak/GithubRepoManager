@@ -1,7 +1,11 @@
 <h3>Github Repo Mangaer</h3>
 
 <input type="text" [(ngModel)] ="username"/>
-<button (click)="fetch_user_data()">Get User Data</button>
+<button>
+  <a [routerLink]="['/user', username]"> Redirect to user</a>
+</button>
+
+<!-- <button (click)="fetch_user_data()">Get User Data</button> -->
 
 <!-- <div *ngIf="userdata">
   {{userdata.name}}

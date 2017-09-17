@@ -35,7 +35,7 @@ import { HomeComponent } from './home/home.component';
         pathMatch: 'full'
       },
       {
-        path: 'user/:id',
+        path: 'user/:username',
         component: UserOrgDetailComponent
       }
     ])
