@@ -11,6 +11,7 @@ import { CustomCssComponent } from './custom-css/custom-css.component';
 // for routing 
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ReposComponent } from './repos/repos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     NavHeadComponent,
     UserOrgDetailComponent,
     CustomCssComponent,
-    HomeComponent
+    HomeComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule, 

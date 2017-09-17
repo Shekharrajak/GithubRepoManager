@@ -22,4 +22,8 @@ export class GithubService {
     console.log(url);
     return 
   }
+
+  get_repos(user_repo_url:string):any{
+    return this.http.get(user_repo_url);
+  }
 }

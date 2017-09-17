@@ -1,0 +1,11 @@
+<div *ngIf="repos" style="width: 400px;">
+  <ul *ngFor="let repo of repos; let i=index" class="list-group">
+    <li class="list-group-item ">
+      <button class="btn btn-xs btn-default"><a href="{{repo.clone_url}}" target="_blank">
+          {{repo.name}}  
+      </a> 
+    </button>
+      
+    </li>
+  </ul>
+</div>

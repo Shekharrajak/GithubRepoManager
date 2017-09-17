@@ -1,0 +1,27 @@
+.navbar {
+    z-index: 10;
+    /* background-color: transparent; */
+    background-color: #5D6D7E;
+    transition:all 1s ease;
+    /* color: white; */
+}
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+.navbar:hover{
+    background: white;
+    color:black;
+}
+
+.navbar:hover a{
+    color: black;
+}
+.navbar a{
+    transition:all 1s ease;
+    color: white;
+}
+.navbar a:hover {
+    box-shadow: inset 0 0 0 2px #53a7ea;
+    /*background-color: #53a7ea*/
+
+}
