@@ -1,13 +1,25 @@
-<h3>Github Repo Mangaer</h3>
+<div  class="intro-header col-xs-3" style="left:40%; padding-top:10%; color:black">
+  <h3>Github Repo Mangaer</h3>
 
-<input type="text" [(ngModel)] ="username"/>
-<button>
-  <a [routerLink]="['/user', username]"> Redirect to user</a>
-</button>
+  <input  class="form-control" type="text" [(ngModel)]="username" placeholder="enter username or org name" value="shekharrajak" />
+  <br>
+  <button>
+    <a [routerLink]="['/user', username]"> Redirect to user</a>
+  </button>
 
-<!-- <button (click)="fetch_user_data()">Get User Data</button> -->
+  <!-- <button (click)="fetch_user_data()">Get User Data</button> -->
 
-<!-- <div *ngIf="userdata">
-  {{userdata.name}}
-  <user-org-detail [userdata]="userdata"></user-org-detail>
-</div> -->
+  <!-- <div *ngIf="userdata">
+    {{userdata.name}}
+    <user-org-detail [userdata]="userdata"></user-org-detail>
+  </div> -->
+
+  <!-- <button (click)="put_rqst()">put rqst</button> -->
+
+  <br>  <br>  <br>
+  <input class="form-control" type="text" [(ngModel)]="repo_keyword" placeholder="enter repo name or keyword" value="daru-view"/>
+  <br>
+  <button>
+      <a [routerLink]="['/repo_search', repo_keyword]"> Search the repo</a>
+  </button>
+</div>

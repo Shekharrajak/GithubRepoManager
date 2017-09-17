@@ -12,6 +12,7 @@ import { CustomCssComponent } from './custom-css/custom-css.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ReposComponent } from './repos/repos.component';
+import { RepoSearchComponent } from './repo-search/repo-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReposComponent } from './repos/repos.component';
     UserOrgDetailComponent,
     CustomCssComponent,
     HomeComponent,
-    ReposComponent
+    ReposComponent,
+    RepoSearchComponent
   ],
   imports: [
     BrowserModule, 
@@ -39,6 +41,10 @@ import { ReposComponent } from './repos/repos.component';
       {
         path: 'user/:username',
         component: UserOrgDetailComponent
+      },
+      {
+        path: 'repo_search/:repo_keyword',
+        component: RepoSearchComponent
       }
     ])
   ],

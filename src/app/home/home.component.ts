@@ -20,4 +20,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  put_rqst():void{
+    this.githubService.put_rqst();
+  }
+
 }

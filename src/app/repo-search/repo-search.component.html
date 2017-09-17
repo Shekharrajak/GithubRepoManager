@@ -1,0 +1,20 @@
+<!-- <repos [user_repo_url]="repo_search_url"></repos> -->
+<div style="padding:10% 10% 10% 10%;">
+  <b>Total search result: {{total_count}}</b> <br>
+  <div *ngIf="repo_list" style="width: 400px;">
+      <ul *ngFor="let repo of repo_list; let i=index" class="list-group">
+        <li class="list-group-item ">
+          <button class="btn btn-xs btn-default"><a href="{{repo.clone_url}}" target="_blank">
+              {{repo.name}}  
+          </a> 
+          </button >
+          <button class="btn btn-xs btn-default">
+          <span class="badge">Owner  :</span>   <a href="{{repo.owner.url}}" target="_blank">
+              {{repo.owner.login}}  
+          </a>  
+        </button>
+        <span class="badge" title="Number of watchers">{{repo.watchers}}</span>
+        </li>
+      </ul>
+    </div>
+</div>

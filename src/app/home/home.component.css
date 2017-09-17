@@ -1,0 +1,9 @@
+.intro-header {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: #f8f8f8;
+    /* background-color: #5D6D7E; */
+    /* background: url(../img/intro-bg.jpg) no-repeat center center; */
+    background-size: cover;
+  }
