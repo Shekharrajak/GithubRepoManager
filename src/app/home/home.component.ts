@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { GithubService } from './github.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { GithubService } from '../github.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
-  title = 'app';
+export class HomeComponent implements OnInit {
+
   @Input() username:string;
   userdata:any;
 
@@ -17,4 +17,7 @@ export class AppComponent {
     this.githubService.get_user_data(this.username)
       .subscribe(res => {this.userdata = res.json(); console.log(res.json());})
   }
+  ngOnInit() {
+  }
+
 }
