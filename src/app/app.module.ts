@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ReposComponent } from './repos/repos.component';
 import { RepoSearchComponent } from './repo-search/repo-search.component';
+import { SavedReposComponent } from './saved-repos/saved-repos.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RepoSearchComponent } from './repo-search/repo-search.component';
     CustomCssComponent,
     HomeComponent,
     ReposComponent,
-    RepoSearchComponent
+    RepoSearchComponent,
+    SavedReposComponent
   ],
   imports: [
     BrowserModule, 
@@ -37,6 +39,10 @@ import { RepoSearchComponent } from './repo-search/repo-search.component';
         path:'',
         redirectTo: '/home',
         pathMatch: 'full'
+      },
+      {
+        path:'saved_details',
+        component: SavedReposComponent 
       },
       {
         path: 'user/:username',
