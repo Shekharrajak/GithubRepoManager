@@ -20,6 +20,8 @@ export class UserOrgDetailComponent implements OnInit {
   ) { }
   @Input() userdata:any;
   username: string;
+  
+  // without promise
   extract_user_data():void{
         // this.route.params
     // .switchMap((params: Params) => this.username=params['username']);
@@ -30,6 +32,20 @@ export class UserOrgDetailComponent implements OnInit {
   
     // console.log(this.userdata);
   }
+  
+
+  // getting return promise
+  extract_user_data_using_promise():void{
+    // this.route.params
+    // .switchMap((params: Params) => this.username=params['username']);
+
+    this.githubService
+    .get_user_data(this.username)
+    .then(data => {this.userdata = data.json()});
+
+    // console.log(this.userdata);
+  }
+  
   ngOnInit() {
     this.route.params.subscribe(
       params => {
@@ -38,7 +54,10 @@ export class UserOrgDetailComponent implements OnInit {
       }
     );
 
-    this.extract_user_data();
+    // using promise
+    this.extract_user_data_using_promise();
+    // without promise
+    // this.extract_user_data();
   }
 
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class GithubService {
@@ -10,10 +11,21 @@ export class GithubService {
   private git_search = 'https://api.github.com/search';
   private users = 'users';
   private  repositories = 'repositories?q=';
-  get_user_data(username: string):any{
+
+  // To get the userdata of github profile
+  // returns the observable.
+  get_user_data_without_promise(username: string):any{
     const url = `${this.git_user_api}/${username}`;
     console.log(url);
     return this.http.get(url);
+  }
+
+  get_user_data(username: string):any{
+    const url = `${this.git_user_api}/${username}`;
+    console.log(url);
+    return this.http.get(url)
+      .toPromise()
+      .catch(this.handleError);;
   }
 
   // TODO:
@@ -40,6 +52,11 @@ export class GithubService {
   search_repo_by_keyword(repo_keyword: string):any{
     const url = this.get_search_repo_url(repo_keyword);
     return this.http.get(url);  
+  }
+
+  private handleError(error: any): Promise<any>{
+    console.error('An error occured', error);// for demo error
+    return Promise.reject(error.message || error);
   }
 
   put_rqst():void{
