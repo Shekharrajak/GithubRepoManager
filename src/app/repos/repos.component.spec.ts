@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReposComponent } from './repos.component';
+import { FormsModule } from '@angular/forms';
+import {
+  RouterTestingModule
+} from '@angular/router/testing';
+import { GithubService } from '../github.service';
+import { HttpModule } from '@angular/http';
+
 
 describe('ReposComponent', () => {
   let component: ReposComponent;
@@ -8,7 +15,9 @@ describe('ReposComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReposComponent ]
+      declarations: [ ReposComponent ],
+      imports: [FormsModule, RouterTestingModule, HttpModule], 
+      providers: [GithubService]
     })
     .compileComponents();
   }));

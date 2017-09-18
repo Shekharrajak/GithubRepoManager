@@ -11,6 +11,7 @@ export class GithubService {
   private git_search = 'https://api.github.com/search';
   private users = 'users';
   private  repositories = 'repositories?q=';
+  private lang = 'language:';
 
   // To get the userdata of github profile
   // returns the observable.
@@ -49,8 +50,23 @@ export class GithubService {
 
   }
 
+
+  get_search_repo_url_lang(repo_lang:string):string{
+    const url = `${this.git_search}/${this.repositories}${this.lang}${repo_lang}`;
+    console.log(url);
+    // console.log(this.git_search + (this.repositories) + (repo_lang));
+    console.log(repo_lang);
+    return url;
+
+  }
+
   search_repo_by_keyword(repo_keyword: string):any{
     const url = this.get_search_repo_url(repo_keyword);
+    return this.http.get(url);  
+  }
+
+  search_repo_by_language(repo_lang: string):any{
+    const url = this.get_search_repo_url_lang(repo_lang);
     return this.http.get(url);  
   }
 

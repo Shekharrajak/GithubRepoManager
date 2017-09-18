@@ -17,6 +17,7 @@ export class RepoSearchComponent implements OnInit {
   @Input() repo_keyword:string;
   repo_list:any;
   total_count:number;
+  repo_lang: string;
   ngOnInit() {
 
     console.log('from init: ');
@@ -25,6 +26,8 @@ export class RepoSearchComponent implements OnInit {
     this.route.params.subscribe(
       params => {
         this.repo_keyword = params['repo_keyword'];
+        // this.repo_lang = params['lang'] || '';
+        // console.log(this.repo_lang);
         console.log(this.repo_keyword); // this consoles the correct true/false value
       }
     );
@@ -34,11 +37,21 @@ export class RepoSearchComponent implements OnInit {
 
   extarct_repo_list():void{
 
-    this.githubService.search_repo_by_keyword(this.repo_keyword)
-    .subscribe(res => {
-      this.repo_list = res.json().items;
-      this.total_count = res.json().total_count;
-       console.log(res.json().items);});
+    // if(this.repo_lang){
+    //   this.githubService.search_repo_by_language(this.repo_keyword)
+    //   .subscribe(res => {
+    //     this.repo_list = res.json().items;
+    //     this.total_count = res.json().total_count;
+    //      console.log(res.json().items);});
+    // }
+    // // else{
+      this.githubService.search_repo_by_keyword(this.repo_keyword)
+      .subscribe(res => {
+        this.repo_list = res.json().items;
+        this.total_count = res.json().total_count;
+         console.log(res.json().items);});
+    // }
+
   }
 
 }

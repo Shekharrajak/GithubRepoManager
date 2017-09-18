@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserOrgDetailComponent } from './user-org-detail.component';
+import { FormsModule } from '@angular/forms';
+import {
+  RouterTestingModule
+} from '@angular/router/testing';
+import { GithubService } from '../github.service';
+import { HttpModule } from '@angular/http';
+import { ReposComponent } from '../repos/repos.component';
 
 describe('UserOrgDetailComponent', () => {
   let component: UserOrgDetailComponent;
@@ -8,7 +15,9 @@ describe('UserOrgDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserOrgDetailComponent ]
+      declarations: [ UserOrgDetailComponent, ReposComponent ],
+      imports: [FormsModule, RouterTestingModule, HttpModule], 
+      providers: [GithubService]
     })
     .compileComponents();
   }));
