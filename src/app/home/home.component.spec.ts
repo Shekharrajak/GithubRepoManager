@@ -7,6 +7,7 @@ import {
 } from '@angular/router/testing';
 import { GithubService } from '../github.service';
 import { HttpModule } from '@angular/http';
+import { RepoSearchComponent } from '../repo-search/repo-search.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -14,7 +15,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
+      declarations: [ HomeComponent, RepoSearchComponent ],
       imports: [FormsModule, RouterTestingModule, HttpModule],
       providers: [GithubService]
     })

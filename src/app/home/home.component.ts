@@ -1,3 +1,5 @@
+/* tslint:disable:no-access-missing-member */
+
 import { Component, OnInit, Input } from '@angular/core';
 import { GithubService } from '../github.service';
 
