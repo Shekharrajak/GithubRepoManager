@@ -10,13 +10,13 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class RepoSearchComponent implements OnInit {
 
   constructor(
-    private githubService: GithubService,    
+    private githubService: GithubService,
     private route: ActivatedRoute,
     ) { }
-  repo_search_url:string;
-  @Input() repo_keyword:string;
-  repo_list:any;
-  total_count:number;
+  repo_search_url: string;
+  @Input() repo_keyword: string;
+  repo_list: any;
+  total_count: number;
   repo_lang: string;
   ngOnInit() {
 
@@ -35,7 +35,7 @@ export class RepoSearchComponent implements OnInit {
     this.extarct_repo_list();
   }
 
-  extarct_repo_list():void{
+  extarct_repo_list(): void {
 
     // if(this.repo_lang){
     //   this.githubService.search_repo_by_language(this.repo_keyword)
@@ -49,7 +49,7 @@ export class RepoSearchComponent implements OnInit {
       .subscribe(res => {
         this.repo_list = res.json().items;
         this.total_count = res.json().total_count;
-         console.log(res.json().items);});
+         console.log(res.json().items); });
     // }
 
   }

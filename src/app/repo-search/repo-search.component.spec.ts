@@ -16,7 +16,7 @@ describe('RepoSearchComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RepoSearchComponent ],
-      imports: [FormsModule, RouterTestingModule, HttpModule], 
+      imports: [FormsModule, RouterTestingModule, HttpModule],
       providers: [GithubService]
     })
     .compileComponents();

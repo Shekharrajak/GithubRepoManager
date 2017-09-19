@@ -8,19 +8,19 @@ import { GithubService } from '../github.service';
 })
 export class HomeComponent implements OnInit {
 
-  @Input() username:string;
-  userdata:any;
+  @Input() username: string;
+  userdata: any;
 
-  constructor(private githubService: GithubService){}
+  constructor(private githubService: GithubService) { }
 
-  fetch_user_data():void{
+  fetch_user_data(): void {
     this.githubService.get_user_data(this.username)
-      .subscribe(res => {this.userdata = res.json(); console.log(res.json());})
+      .subscribe(res => {this.userdata = res.json(); console.log(res.json()); });
   }
   ngOnInit() {
   }
 
-  put_rqst():void{
+  put_rqst(): void {
     this.githubService.put_rqst();
   }
 

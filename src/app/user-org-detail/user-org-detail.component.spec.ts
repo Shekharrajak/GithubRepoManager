@@ -16,7 +16,7 @@ describe('UserOrgDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserOrgDetailComponent, ReposComponent ],
-      imports: [FormsModule, RouterTestingModule, HttpModule], 
+      imports: [FormsModule, RouterTestingModule, HttpModule],
       providers: [GithubService]
     })
     .compileComponents();

@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-// for routing 
+// for routing
 // import { RouterModule } from '@angular/router';
 import {
   RouterTestingModule
@@ -16,10 +16,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports:[
+      imports: [
         RouterTestingModule, HttpModule
       ],
-      providers:[
+      providers: [
         GithubService
       ]
     }).compileComponents();

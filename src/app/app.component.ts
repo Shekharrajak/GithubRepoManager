@@ -8,13 +8,14 @@ import { GithubService } from './github.service';
 })
 export class AppComponent {
   title = 'app';
-  @Input() username:string;
-  userdata:any;
+  @Input() username: string;
+  userdata: any;
 
-  constructor(private githubService: GithubService){}
+  constructor(private githubService: GithubService) { }
 
-  fetch_user_data():void{
+  fetch_user_data(): void {
     this.githubService.get_user_data(this.username)
-      .subscribe(res => {this.userdata = res.json(); console.log(res.json());})
+      .subscribe(res => {this.userdata = res.json(); console.log(res.json()); }
+    );
   }
 }

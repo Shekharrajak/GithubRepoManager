@@ -8,7 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { GithubService } from '../github.service';
 
 @Component({
-  selector: 'user-org-detail',
+  selector: 'app-user-org-detail',
   templateUrl: './user-org-detail.component.html',
   styleUrls: ['./user-org-detail.component.css']
 })
@@ -18,34 +18,31 @@ export class UserOrgDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private githubService: GithubService
   ) { }
-  @Input() userdata:any;
+  @Input() userdata: any;
   username: string;
-  
   // without promise
-  extract_user_data():void{
+  extract_user_data(): void {
         // this.route.params
     // .switchMap((params: Params) => this.username=params['username']);
 
     this.githubService
     .get_user_data(this.username)
-    .subscribe(data => {this.userdata = data.json()});
-  
+    .subscribe(data => {this.userdata = data.json(); } );
     // console.log(this.userdata);
   }
-  
 
   // getting return promise
-  extract_user_data_using_promise():void{
+  extract_user_data_using_promise(): void {
     // this.route.params
     // .switchMap((params: Params) => this.username=params['username']);
 
     this.githubService
     .get_user_data(this.username)
-    .then(data => {this.userdata = data.json()});
+    .then(data => {this.userdata = data.json(); } );
 
     // console.log(this.userdata);
   }
-  
+
   ngOnInit() {
     this.route.params.subscribe(
       params => {
