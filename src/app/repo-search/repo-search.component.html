@@ -9,9 +9,14 @@
           </a> 
           </button >
           <button class="btn btn-xs btn-default">
-          <span class="badge">Owner  :</span>   <a href="{{repo.owner.url}}" target="_blank">
+          <span class="badge">Owner  :</span>   
+          <a href="{{repo.owner.url}}" target="_blank">
               {{repo.owner.login}}  
           </a>  
+          <a href="{{repo.owner.html_url}}" target="_blank">
+              {{repo.owner.login}}  
+          </a>  
+          <a [routerLink]="['/user',repo.owner.login ]"> Search the repo</a>
         </button>
         <span class="badge" title="Number of watchers">{{repo.watchers}}</span>
         </li>
