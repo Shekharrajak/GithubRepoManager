@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "9.5"
+os:
+  - linux
+
+script:
+  - npm i -g surge
+  - ng build
+
+after_success:
+  - chmod ugo+x ./deploy.sh
+  - ./deploy.sh
