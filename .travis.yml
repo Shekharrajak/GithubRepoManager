@@ -5,7 +5,7 @@ os:
   - linux
 
 script:
-  - npm install
+  - npm i -g surge
   - ng build
 
 after_success:
